@@ -1,26 +1,56 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Roboto&display=swap');
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #373F41;
+}  
+
+@media only screen and (min-width: 0) {
+    html {
+        font-size: 16px
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    html {
+        font-size: 16.5px
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    html {
+        font-size: 17px
+    }
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Fira Sans', sans-serif !important;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+#root{
+    height: 100%;
+    min-height: 100vh;
 }
 
-* {
-  box-sizing: border-box;
+.App{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.clearfix::after{
+    content: " ";
+    display: block; 
+    height: 0; 
+    clear: both;
+}
+
+input:focus{
+    outline-width: 0;
+    outline-style:none;
 }
