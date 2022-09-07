@@ -59,6 +59,7 @@ const Search_unstyled = (props: Props) => {
     const router = useRouter();
 
     useEffect(()=>{
+        const router = useRouter();
         if (!router.isReady){return}
         setInput(router.query.query as string|| "")
     }, [router.isReady]);
