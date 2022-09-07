@@ -18,27 +18,42 @@ type Props = {
 
 type DataType = ReturnType<typeof useGoogleSearch>
 
+type PaginatorProps = {
+    
+}
+
+const Paginator = (props: PaginatorProps) => {
+  return (
+    <div></div>
+  )
+}
+
 const Results_unstyled = (props: Props) => {
     const router = useRouter();
     //const [query, setQuery] = useState<string|string[]|undefined>()
     const [data, setData] = useState<typeof test_response>()
-    
+    const results_p_page = 10
+    const this_page = parseInt(router.query.page as string)||1;
+    const this_start = ((this_page - 1) * results_p_page)+1;
+
     useEffect(()=> {
         if (!router.isReady){return}
         if( router.query.query === null){
             router.push("/")
         }
+        console.log(router.query.page + "alou")
         const fetchData = async () => {
             fetch(
-                `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${GOOGLE_CONTEXT_KEY}&q=${router.query.query}`
+                `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${GOOGLE_CONTEXT_KEY}&q=${router.query.query}&num=${results_p_page}&start=${this_start||1}}`
             )
             .then((response) => response.json())
             .then(result => {
                 setData(result)
+                console.log(result)
             })
         }
         fetchData()
-
+        
     }, [router.isReady]);
     //const data = useGoogleSearch(query as string || "google")
     

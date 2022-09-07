@@ -61,7 +61,6 @@ const Search_unstyled = (props: Props) => {
     useEffect(()=>{
         if (!router.isReady){return}
         setInput(router.query.query as string|| "")
-        console.log(input)
     }, [router.isReady]);
 
     const doSearch = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -71,7 +70,7 @@ const Search_unstyled = (props: Props) => {
         //go to location
         router.push({
             pathname: '/results/[query]',
-            query: { query: input},
+            query: { query: input,page:1},
           })
     };
 
