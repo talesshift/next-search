@@ -14,7 +14,7 @@ type ResultProps = {
 
 const SearchResult_unstyled = (props: ResultProps) => {
   return (
-    <div key={props.item.cacheId} className={props.className}> 
+    <div className={props.className}> 
         <div className="date">20/02/2022 20:07:10</div>
         <div className="info"><a href="#" className="author">{props.item.displayLink}</a><a className="from">{props.item.kind}</a></div>
         <div className="titulo"><a href={props.item.link}>{props.item.snippet}</a></div>
