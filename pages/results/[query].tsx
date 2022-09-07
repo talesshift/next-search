@@ -44,7 +44,7 @@ const Results_unstyled = (props: Props) => {
         console.log(router.query.page + "alou")
         const fetchData = async () => {
             fetch(
-                `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${GOOGLE_CONTEXT_KEY}&q=${router.query.query}&num=${results_p_page}&start=${this_start||1}}`
+                `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${GOOGLE_CONTEXT_KEY}&q=${router.query.query}&num=${results_p_page}&start=${this_start||1}`
             )
             .then((response) => response.json())
             .then(result => {
