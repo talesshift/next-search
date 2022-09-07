@@ -50,7 +50,7 @@ const Results_unstyled = (props: Props) => {
             .then(result => {
                 setData(result)
                 console.log(result)
-                console.log( `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${GOOGLE_CONTEXT_KEY}&q=${router.query.query}&num=${results_p_page}&start=${this_start||1}}`)
+                console.log( `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${GOOGLE_CONTEXT_KEY}&q=${router.query.query}&num=${results_p_page}&start=${this_start||1}`)
             })
         }
         fetchData()
