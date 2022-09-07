@@ -1,0 +1,1 @@
+export const CUSTOM_SEARCH_API_KEY = ' AIzaSyAG2whjvql5XrAwbf7sD0DWKoRxLV3NLlg ';
