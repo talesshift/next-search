@@ -50,6 +50,7 @@ const Results_unstyled = (props: Props) => {
             .then(result => {
                 setData(result)
                 console.log(result)
+                console.log(this_start)
             })
         }
         fetchData()
