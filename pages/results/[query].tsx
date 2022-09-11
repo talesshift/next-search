@@ -92,6 +92,7 @@ const Results = styled(Results_unstyled)`
         display:flex;
         align-items:center;
         justify-content: center;
+        padding-bottom:1rem;
     }
 `
 
