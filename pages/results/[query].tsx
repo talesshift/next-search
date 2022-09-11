@@ -87,6 +87,12 @@ const Results = styled(Results_unstyled)`
         border-bottom: 1px solid #C4C4C4;
         padding-bottom: 0.2rem;
     }
+    .paginations{
+        ${container}
+        display:flex;
+        align-items:center;
+        justify-content: center;
+    }
 `
 
 export default Results;

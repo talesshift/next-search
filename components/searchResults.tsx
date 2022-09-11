@@ -79,8 +79,9 @@ const SearchResults = (props: Props) => {
                         <SearchResult key={item.cacheId} item={item}/>
                     )
                 })}
-                <Pagination page={1+((req.queries.request[0].startIndex - 1) / req.queries.request[0].count)} count={parseInt(req.searchInformation.totalResults)} onChange={handleChange} shape="rounded" />
-
+                <div className="paginations">
+                    <Pagination page={1+((req.queries.request[0].startIndex - 1) / req.queries.request[0].count)} count={parseInt(req.searchInformation.totalResults)} onChange={handleChange} shape="rounded" />
+                </div>
             </>
         )
     }
