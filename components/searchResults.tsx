@@ -1,9 +1,12 @@
 import styled from "@emotion/styled";
+import { Pagination } from "@mui/material";
+import router from "next/router";
 import { colors, container } from "../public/consts";
 import { test_error, test_response } from "../public/response";
 
 type Props = {
     request: typeof test_response | typeof test_error;
+    //onChange:VoidFunction;
 }
 
 type ResultProps = {
@@ -49,6 +52,16 @@ const NoSearchResult = styled.div`
 const SearchResults = (props: Props) => {
     const sorry = "Sorry, no results found..."
 
+    const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+        
+        const req = props.request as typeof test_response;
+        //props.onChange()
+        router.push({
+            pathname: '/results/[query]',
+            query: { query: req.queries.request[0].searchTerms, page:value},
+        })
+    };
+
     if(props.request.hasOwnProperty('error')){
         const error = props.request as typeof test_error;
         return (<NoSearchResult> <a className="sorry">{error.error.code} : {error.error.status}</a></NoSearchResult>)
@@ -66,6 +79,8 @@ const SearchResults = (props: Props) => {
                         <SearchResult key={item.cacheId} item={item}/>
                     )
                 })}
+                <Pagination page={1+((req.queries.request[0].startIndex - 1) / req.queries.request[0].count)} count={parseInt(req.searchInformation.totalResults)} onChange={handleChange} shape="rounded" />
+
             </>
         )
     }
