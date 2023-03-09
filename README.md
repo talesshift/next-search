@@ -6,7 +6,7 @@ project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/
 
 First you will need to set the NEXT_PUBLIC_SEARCH_API_KEY enviroment variable with a [`google api key`](https://developers.google.com/custom-search/v1/introduction#identify_your_application_to_google_with_api_key)
 
-run the development server:
+THEN you can run the development server:
 
 ```bash
 npm run dev
